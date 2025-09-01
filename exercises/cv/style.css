@@ -1,0 +1,68 @@
+.name-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.name-title h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.name-title p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+file-folder {
+  display: block;
+  width: 60%;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+}
+
+file-folder .header {
+  background-color: #ddd;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+file-folder .content {
+  position: relative;
+  height: 150px; /* default height; will be set by attribute */
+  overflow: hidden;
+}
+
+file-folder .file-inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+file-folder .file-inner.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+file-folder .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}

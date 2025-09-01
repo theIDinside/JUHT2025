@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Folder Custom Element</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="file-element.js" defer></script>
+    <script src="folder-element.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="name-title">
+        <h1>Simon Farre</h1>
+        <p>Systems level programming and debuggers</p>
+    </div>
+    <file-folder title="About me" height="300px">
+        <file-element>
+            <div>
+                <div>
+                    <div style="display: flex; align-items: center; gap: 20px; padding: 10px; max-width: 750px;">
+                        <!-- Left column: Image -->
+                        <div style="flex: 0 0 auto;">
+                            <img src="self.jpg" alt="Person's face"
+                                style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+
+                        <!-- Right column: Text -->
+                        <div style="flex: 1;;">
+                            <h3 style="margin: 0;">Simon Farre</h3>
+                            <p>All things software development is enjoyable to nerd into, but particularly systems level
+                                programming
+                                and even more so debuggers! Writing software that helps someone, somewhere solve a
+                                problem
+                                is a feeling
+                                that's hard to beat.</p>
+                            <p>I particularly love open source software - an invaluable source of knowledge and
+                                experience
+                                can be found. I encourage <b>everybody</b> to give back to the tools they use.</p>
+                            <p>Github can be found at <a href="https://github.com/theIDinside">https://github.com/theIDinside</a></p>
+                        </div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </file-element>
+    </file-folder>
+
+    <file-folder title="Authored Projects & Open source contributions" height="400px">
+        <file-element title="Midas">
+            <img src="midas.png" alt="Midas"><br>
+            <p>Midas is a VSCode Debug Adapter extension I've authored and maintain, aimed to make the use of RR and GDB together in
+                VSCode more seamless. Go check it out on the <a
+                    href="https://marketplace.visualstudio.com/items?itemName=farrese.midas">vscode extension
+                    marketplace!</a></p>
+            <p>If your daily driver is Linux and you write code that compiles natively, you most likely will want to
+                debug using rr and if you're using vscode, why not use Midas!</p>
+            <p><a href="https://github.com/farre/midas">Look at repo on github</a></p>
+        </file-element>
+        <file-element title="MDB">
+            <div>
+                <p>MDB is a prototype debugger I'm writing for research purposes, with the intention of making
+                    multiprocess debugging with RR "Just Work™". The current model for using RR is limited by GDB
+                    and
+                    the remote protocol being hard to make place nice with multi process debugging. Gdb, RR and MDB
+                    are
+                    all linux-only debuggers.</p>
+                <p>
+                    Uses a custom build tool written in python to make building easier. Most of the debugger is written
+                    from scratch;
+                    a custom JSON parser (immutable json once parsed), a debug adapter protocol compliant communications
+                    mode. The project is written in c++23 and hopefully soon integrates rr directly into it!
+                </p>
+                <a href="https://github.com/theIDinside/mdebug" target="_blank">Take a look on github</a>
+            </div>
+        </file-element>
+        <file-element title="Open source contributions">
+            <div>Some of the open source projects I contribute to regularly, I've contributed to some times (so not a maintainer or author) or have
+                pending pull requests waiting to land:
+                <ul>
+                    <li><a href="https://github.com/rr-debugger/rr">rr debugger</a></li>
+                    <li><a href="https://sourceware.org/gdb/">gdb</a></li>
+                    <li>firefox (temp employment implementing a specific pre-designed feature)</li>
+                    <li><a href="https://github.com/LadybirdBrowser/ladybird">ladybird</a></li>
+                </ul>
+            </div>
+        </file-element>
+        <file-element title="This exercise">
+            <div>
+                <p>For this exercise I specifically investigated the use cases for web components in HTML
+                    where we create custom elements with custom logic and display them using plain vanilla Javascript
+                    instead of using a frame work.</p>
+                <p>
+                    Each of these "folder like" containers are 2 custom elements, a "file-folder" and a "file-element",
+                    and
+                    the folders that contain more than 1 page, will have buttons added automatically to them, to flip,
+                    as though we're reading a book. If you squint, it will at least look like that :P.</p>
+                <p>
+                    Each custom file-element is also scrollable! So the user defines the height on the file-folder
+                    element and if the individual file-elements require more space, they just get a scrollbar. Neat!
+                </p>
+            </div>
+        </file-element>
+    </file-folder>
+
+    <file-folder title="Skills">
+        <file-element>
+            <p>Programming languages I use regularly or consider myself fluent in
+            <ul>
+                <li>C/C++</li>
+                <li>Python</li>
+                <li>Javascript</li>
+                <li>Rust</li>
+                <li>Java</li>
+            </ul>
+            </p>
+            <p>Tools I use daily</p>
+            <ul>
+                <li>gdb - The gnu debugger</li>
+                <li>rr - The record & replay debugger</li>
+                <li>git</li>
+                <li>vscode</li>
+                <li>mdb</li>
+                <li>cmake</li>
+            </ul>
+        </file-element>
+    </file-folder>
+
+</body>
+
+</html>
